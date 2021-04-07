@@ -27,7 +27,7 @@ while partie != 5:
     if prevision == []:
       joueur = not joueur
 
-  # On regarde si un dame est crée
+  # On regarde si une dame est crée
   #is_new_dame()
   
   # On regarde si la partie est terminée
