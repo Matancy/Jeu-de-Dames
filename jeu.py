@@ -17,7 +17,7 @@ def quel_deplacement(source, destination, joueur, prevision):
   if joueur in damier[xo][yo]:
 
     # On regarde si il s'agit d'un déplacement simple
-    result = is_deplacement(xo,xd,yo,yd)
+    result = is_deplacement(xo, xd, yo, yd)
     global deplacement_simple
     if result == True:
       deplacement_simple = True
@@ -74,19 +74,18 @@ def quel_deplacement(source, destination, joueur, prevision):
 
 
 # Fonction pour voir si c'est un déplacement
-def is_deplacement(xo,xd,yo,yd):
-  if xd + 2 == xo or xd - 2 == xo and yd + 2 == yo or yd - 2 == yo:
-    print("is deplacement")
+def is_deplacement(xo, xd, yo, yd):
+  if xd + 1 == xo or xd - 1 == xo and yd + 1 == yo or yd - 1 == yo:
     return True
 
 
 # Vérification si le joueur doit manger
-def indication_doit_manger(joueur, deplacement):
+def indication_doit_manger(joueur, deplacement_simple):
   prevision = []
   joueur_inverse = quel_joueur(not joueur)
   joueur = quel_joueur(joueur)
 
-  if deplacement == True:
+  if deplacement_simple == True:
     return []
 
   for x in range(10):
