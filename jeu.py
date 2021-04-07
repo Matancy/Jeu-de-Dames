@@ -91,35 +91,21 @@ def indication_doit_manger(joueur, deplacement_simple):
 
   for x in range(10):
     for y in range(10):
+      tableau = [
+          [[x-2], [y-2], [x-1], [y-1]],
+          [[x+2], [y-2], [x+1], [y-1]],
+          [[x-2], [y+2], [x-1], [y+1]],
+          [[x+2], [y+2], [x+1], [y+1]]
+      ]
+
       if joueur == damier[x][y]:
+        for el in tableau:
+          if 0 <= int(el[0]) <= 9 and 0 <= int(el[1]) <= 9:
+            if damier[el[0]][el[1]] == "-" and damier[el[2]][el[3]] == joueur_inverse: 
+              print(f"{bcolors.WARNING}{x}{y} doit manger en {el[0]}{el[1]}{bcolors.ENDC}")
+              prevision.append(f"S{x}{y}")
+              prevision.append(f"D{el[0]}{el[1]}")
 
-        # Avant gauche
-        if x-2 >= 0 and y-2 >= 0:
-          if damier[x-2][y-2] == "-" and damier[x-1][y-1] == joueur_inverse:
-            print(f"{bcolors.WARNING}{x}{y} doit manger en {x-2}{y-2}{bcolors.ENDC}")
-            prevision.append(f"S{x}{y}")
-            prevision.append(f"D{x-2}{y-2}")
-
-        # Arrière gauche
-        if x+2 <= 9 and y-2 >= 0:
-          if damier[x+2][y-2] == "-" and damier[x+1][y-1] == joueur_inverse:
-            print(f"{bcolors.WARNING}{x}{y} doit manger en {x+2}{y-2}{bcolors.ENDC}")
-            prevision.append(f"S{x}{y}")
-            prevision.append(f"D{x+2}{y-2}")
-
-        # Avant droit
-        if x-2 >= 0 and y+2 <= 9:
-          if damier[x-2][y+2] == "-" and damier[x-1][y+1] == joueur_inverse:
-            print(f"{bcolors.WARNING}{x}{y} doit manger en {x-2}{y+2}{bcolors.ENDC}")
-            prevision.append(f"S{x}{y}")
-            prevision.append(f"D{x-2}{y+2}")
-
-        # Arrière droit
-        if x+2 <= 9 and y+2 <= 9:
-          if damier[x+2][y+2] == "-" and damier[x+1][y+1] == joueur_inverse:
-            print(f"{bcolors.WARNING}{x}{y} doit manger en {x+2}{y+2}{bcolors.ENDC}")
-            prevision.append(f"S{x}{y}")
-            prevision.append(f"D{x+2}{y+2}")
   return prevision
 
 # Sauvegarde des informations de jeu
