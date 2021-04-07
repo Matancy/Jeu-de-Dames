@@ -75,7 +75,7 @@ def quel_deplacement(source, destination, joueur, prevision):
 
 # Fonction pour voir si c'est un déplacement
 def is_deplacement(xo,xd,yo,yd):
-  if xd + 2 == xo or xd - 2 == xo and yd + 2 == yo and yd - 2 == yo:
+  if xd + 2 == xo or xd - 2 == xo and yd + 2 == yo or yd - 2 == yo:
     print("is deplacement")
     return True
 
