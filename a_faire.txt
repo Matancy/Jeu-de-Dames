@@ -1,0 +1,7 @@
+Liste de choses à faire
+
+- Mise en place du système de la Dame
+=> Fonctions pour faire déplacer la Dame
+=> Fonctions pour faire manger la Dame
+
+- Corriger le bug de la prévision
