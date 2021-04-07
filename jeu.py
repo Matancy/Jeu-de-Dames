@@ -16,6 +16,14 @@ def quel_deplacement(source, destination, joueur, prevision):
   # On regarde si c'est le bon joueur qui joue
   if joueur in damier[xo][yo]:
 
+    # On regarde si il s'agit d'un déplacement simple
+    result = is_deplacement(xo,xd,yo,yd)
+    if result == True:
+      # On mets en place une variable pour les indications
+      deplacement_simple = True
+    else:
+      deplacement_simple = False
+
     # Vérification si la case est existante
     result = case_existante(xd, yd)
     if result != True:
@@ -65,11 +73,20 @@ def quel_deplacement(source, destination, joueur, prevision):
     return False
 
 
+# Fonction pour voir si c'est un déplacement
+def is_deplacement(xo,xd,yo,yd):
+  if xd + 2 == xo or xd - 2 == xo and yd + 2 == yo and yd - 2 == yo:
+    return True
+
+
 # Vérification si le joueur doit manger
-def indication_doit_manger(joueur):
+def indication_doit_manger(joueur, deplacement):
   prevision = []
   joueur_inverse = quel_joueur(not joueur)
   joueur = quel_joueur(joueur)
+  
+  if deplacement == True:
+    return []
 
   for x in range(10):
     for y in range(10):

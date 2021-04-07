@@ -9,9 +9,9 @@ from pygame_code import *
 while partie != 5:
 
   # Vérification si on doit manger
-  #prevision = indication_doit_manger(joueur)
-  #if prevision == []:
-   # joueur = not joueur
+  prevision = indication_doit_manger(joueur)
+  if prevision == []:
+   joueur = not joueur
 
 
   prevision = indication_doit_manger(joueur)
