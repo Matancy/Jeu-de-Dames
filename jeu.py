@@ -18,8 +18,8 @@ def quel_deplacement(source, destination, joueur, prevision):
 
     # On regarde si il s'agit d'un déplacement simple
     result = is_deplacement(xo,xd,yo,yd)
+    global deplacement_simple
     if result == True:
-      # On mets en place une variable pour les indications
       deplacement_simple = True
     else:
       deplacement_simple = False
@@ -84,7 +84,7 @@ def indication_doit_manger(joueur, deplacement):
   prevision = []
   joueur_inverse = quel_joueur(not joueur)
   joueur = quel_joueur(joueur)
-  
+
   if deplacement == True:
     return []
 
