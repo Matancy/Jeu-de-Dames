@@ -6,7 +6,7 @@ from dame import *
 from pygame_code import *
 
 # On définie la variable de déplacement
-deplacement_simple = False
+deplacement_simple = 0
 
 while partie != 5:
 
@@ -23,9 +23,12 @@ while partie != 5:
   print(f"{bcolors.UNDERLINE}Joueur :{bcolors.ENDC} {player_name}")
   source = str(input("Emplacement source : "))
   destination = str(input("Emplacement destination : "))
-  if quel_deplacement(source, destination, joueur, prevision) == False:
+  result = quel_deplacement(source, destination, joueur, prevision)
+  if result == False:
     if prevision == []:
       joueur = not joueur
+  elif result == 1:
+    deplacement_simple = 1
 
   # On regarde si une dame est crée
   #is_new_dame()

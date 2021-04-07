@@ -20,9 +20,9 @@ def quel_deplacement(source, destination, joueur, prevision):
     result = is_deplacement(xo, xd, yo, yd)
     global deplacement_simple
     if result == True:
-      deplacement_simple = True
+      deplacement_simple = 1
     else:
-      deplacement_simple = False
+      deplacement_simple = 0
 
     # Vérification si la case est existante
     result = case_existante(xd, yd)
@@ -67,7 +67,8 @@ def quel_deplacement(source, destination, joueur, prevision):
     sauvegarde(destination, joueur) # Déplacement joueur
     sauvegarde(source, "-") # Vider la case précédente
 
-    # Peut-il rejouer ?
+    # On retourne le type de déplacement effectué
+    return deplacement_simple
   else:
     print(f'{bcolors.WARNING}Mauvais joueur{bcolors.ENDC}')
     return False
@@ -85,7 +86,7 @@ def indication_doit_manger(joueur, deplacement_simple):
   joueur_inverse = quel_joueur(not joueur)
   joueur = quel_joueur(joueur)
 
-  if deplacement_simple == True:
+  if deplacement_simple == 1:
     return []
 
   for x in range(10):
