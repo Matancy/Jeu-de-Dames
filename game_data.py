@@ -5,8 +5,6 @@ partie = 1 # Défini la partie comme en cours
 joueur = False # Défini quel joueur est en train de jouer (1 croix / 0 Rond)
 
 esp = "\t" # Variable de tabulation
-j1='O' # Joueur 1
-j2='X' # Joueur 2
 # Damier principal
 damier = [
           ['','O','','O','','O','','O','','O'],

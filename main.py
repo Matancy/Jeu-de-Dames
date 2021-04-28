@@ -12,6 +12,8 @@ while partie != 5:
 
   # Vérification si on doit manger
   prevision = indication_doit_manger(joueur, deplacement_simple)
+  print(joueur)
+  print(prevision)
 
   # Réinitialisation du type de déplacement
   deplacement_simple = 0
