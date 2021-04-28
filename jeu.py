@@ -141,18 +141,12 @@ def case_existante(x, y):
 
 # Fonction pour vérifier que la case est vide
 def case_vide(x, y):
-  if damier[x][y] != '-':
-    return False
-  else:
-    return True
+  return damier[x][y] == '-'
 
 
 # Fonction pour vérifier que le déplacement est possible
 def deplacement_possible(xo, xd, yo, yd): 
-  if yo == yd:
-    return False
-  else:
-    return True
+  return yo != yd
 
   
 # Vérification qu'on aille pas en arrière pour rien
