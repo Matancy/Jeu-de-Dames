@@ -3,3 +3,5 @@ Liste de choses à faire
 - Mise en place du système de la Dame
 => Fonctions pour faire déplacer la Dame
 => Fonctions pour faire manger la Dame
+
+- Refaire fonctionner le système d'indication de qui manger (en le réduisant)
