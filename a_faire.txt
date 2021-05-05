@@ -5,3 +5,11 @@ Liste de choses à faire
 => Fonctions pour faire manger la Dame
 
 - Refaire fonctionner le système d'indication de qui manger (en le réduisant)
+
+- Problème de changement de joueur quand on mange
+
+- Documenter les fonctions
+=> Sortir un dossier automatiquement avec la doc
+
+Partie IA :
+- Réfléchir sur un système de points pour les actions
