@@ -36,7 +36,7 @@ while partie != 5:
     result = quel_deplacement(source, destination, joueur, prevision)
 
     # Si on a une erreur sur le fonctionnement, on fait rejouer le joueur
-    if result == False:
+    if result == "Erreur":
         if prevision == []:
             joueur = not joueur
 

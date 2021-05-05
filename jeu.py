@@ -28,19 +28,19 @@ def quel_deplacement(source, destination, joueur, prevision):
     result = case_existante(xd, yd)
     if result != True:
       print ("Case incorrecte (case_possible)")
-      return False
+      return "Erreur"
   
     # Vérification si la case est prise
     result = case_vide(xd, yd)
     if result != True:
       print ("Case prise (case_vide)")
-      return False
+      return "Erreur"
 
     # Vérification si le déplacement est possible
     result = deplacement_possible(xo, xd, yo, yd)
     if result != True:
       print("Déplacement impossible (deplacement_possible)")
-      return False
+      return "Erreur"
 
     #Vérification si on a affaire à une dame ou un pion
     if joueur == "\033[94mX\033[0m" or joueur == "\033[94mO\033[0m":
@@ -53,15 +53,15 @@ def quel_deplacement(source, destination, joueur, prevision):
         print(f'{bcolors.OKGREEN}Joueur mangé{bcolors.ENDC}')
       elif result == False:
         print("Déplacement impossible (manger)")
-        return False
+        return "Erreur"
       elif result == "doitmanger":
         print("Vous devez manger")
-        return False
+        return "Erreur"
       else:
         result = deplacement_arriere(xo, xd, joueur)
         if result == False:
           print('Déplacement impossible (deplacement_arriere)')
-          return False
+          return "Erreur"
 
     # Sauvegarde
     sauvegarde(destination, joueur) # Déplacement joueur
@@ -71,7 +71,7 @@ def quel_deplacement(source, destination, joueur, prevision):
     return deplacement_simple
   else:
     print(f'{bcolors.WARNING}Mauvais joueur{bcolors.ENDC}')
-    return False
+    return "Erreur"
 
 
 # Fonction pour voir si c'est un déplacement
