@@ -49,9 +49,9 @@ def quel_deplacement(source, destination, joueur, prevision):
 
       # Vérification si on doit manger
       result = manger(xo, xd, yo, yd, joueur, prevision)
-      if result == True:
+      if result == "mange":
         print(f'{bcolors.OKGREEN}Joueur mangé{bcolors.ENDC}')
-      elif result == False:
+      elif result == "pasmange":
         print("Déplacement impossible (manger)")
         return "Erreur"
       elif result == "doitmanger":
@@ -59,7 +59,7 @@ def quel_deplacement(source, destination, joueur, prevision):
         return "Erreur"
       else:
         result = deplacement_arriere(xo, xd, joueur)
-        if result == False:
+        if result == "pasmange":
           print('Déplacement impossible (deplacement_arriere)')
           return "Erreur"
 
@@ -171,7 +171,7 @@ def manger(xo, xd, yo, yd, joueur, prevision):
   elif yd + 1 == yo or yd - 1 == yo:
     return "nointention"
   else:
-    return False # Aucune volonté de manger
+    return "nointention" # Aucune volonté de manger
 
   # On regarde si on a un déplacement pour manger (2 lignes)
   if joueur == "X":
@@ -180,30 +180,30 @@ def manger(xo, xd, yo, yd, joueur, prevision):
         # On enregistre les déplacements
         xmilieu = xd + 1
         sauvegarde(f"{xmilieu}{ymilieu}", "-")
-        return True
+        return "mange"
       # Manger en arrière pour X
       elif damier[xd - 1][ymilieu] == "O" and xo+2 == xd:
         # On enregistre les déplacements
         xmilieu = xd - 1
         sauvegarde(f"{xmilieu}{ymilieu}", "-")
-        return True
+        return "mange"
       else:
-        return False
+        return "pasmange"
   else:
       # Manger avant pour O
       if damier[xd - 1][ymilieu] == "X" and xo+2 == xd:
         # On enregistre les déplacements
         xmilieu = xd - 1
         sauvegarde(f"{xmilieu}{ymilieu}", "-")
-        return True
+        return "mange"
       # Manger arrière pour O
       elif damier[xd + 1][ymilieu] == "X" and xo-2 == xd:
         # On enregistre les déplacements
         xmilieu = xd + 1
         sauvegarde(f"{xmilieu}{ymilieu}", "-")
         print(xd+1, ymilieu)
-        return True
+        return "mange"
       else:
-        return False
-  return False
+        return "pasmange"
+  return "pasmange"
 
