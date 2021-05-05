@@ -16,13 +16,11 @@ while partie != 5:
     # Si on ne peut pas manger, on change de joueur
     if prevision == []:
 
-        # Réinitialisation du type de déplacement
+        # Réinitialisation du type de déplacement et inversion du joueur
         deplacement_simple = 0
-
-        # Inversion du joueur
         joueur = not joueur
 
-        # On refais les indications avec le nouveau joueur
+        # On refais les indications de déplacement avec le nouveau joueur
         prevision = indication_doit_manger(joueur, deplacement_simple)
 
     # On affiche la grille de jeu
@@ -37,7 +35,7 @@ while partie != 5:
     # On déplace le joueur
     result = quel_deplacement(source, destination, joueur, prevision)
 
-    # On fait rejouer le joueur
+    # Si on a une erreur sur le fonctionnement, on fait rejouer le joueur
     if result == False:
         if prevision == []:
             joueur = not joueur
