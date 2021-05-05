@@ -51,6 +51,3 @@ while partie != 5:
   if result != "partie-en-cours":
     print(result)
     partie = 5
-
-
-
