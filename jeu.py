@@ -86,7 +86,7 @@ def indication_doit_manger(joueur, deplacement_simple):
   joueur_inverse = quel_joueur(not joueur)
   joueur = quel_joueur(joueur)
 
-  if deplacement_simple == 1:
+  if deplacement_simple == True:
     return []
 
   for x in range(10):

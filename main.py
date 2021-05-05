@@ -6,7 +6,7 @@ from dame import *
 from pygame_code import *
 
 # Variable de déplacement évitant de bloquer le jeu par la prévision
-deplacement_simple = 0
+deplacement_simple = False
 
 while partie != 5:
 
@@ -17,7 +17,7 @@ while partie != 5:
     if prevision == []:
 
         # Réinitialisation du type de déplacement et inversion du joueur
-        deplacement_simple = 0
+        deplacement_simple = False
         joueur = not joueur
 
         # On refais les indications de déplacement avec le nouveau joueur
@@ -42,7 +42,7 @@ while partie != 5:
 
     # Si le joueur fait un déplacement simple, pour pas le bloquer
     elif result == 1:
-        deplacement_simple = 1
+        deplacement_simple = True
 
     # On regarde si une dame est crée
     #is_new_dame()
