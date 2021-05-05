@@ -3,7 +3,7 @@ from jeu import *
 from game_data import *
 from fin_de_partie import *
 from dame import *
-from pygame_code import *
+#from pygame_code import *
 
 # Variable de déplacement évitant de bloquer le jeu par la prévision
 deplacement_simple = False
