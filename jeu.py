@@ -4,6 +4,17 @@ from dame import *
 
 # Gestion des déplacements du joueur
 def quel_deplacement(source, destination, joueur, prevision):
+  """
+    Fonction qui va gérer les déplacements des pions
+
+    input source: coordonnées de la case de départ du pion à déplacer
+    input destination: coordonnées de la case de destination du pion à déplacer
+    input joueur: le joueur qui joue
+    input prevision: stocke les indications pour manger
+
+    return booléen: False (le déplacement est impossible)
+    return booléen: True (le déplacement est possible)
+  """
 
   joueur = quel_joueur(joueur)
 
@@ -76,12 +87,27 @@ def quel_deplacement(source, destination, joueur, prevision):
 
 # Fonction pour voir si c'est un déplacement
 def is_deplacement(xo, xd, yo, yd):
+  """
+    Fonction qui nous informe si c'est un déplacement simple
+
+    input xo, xd, yo, yd: coordonnées des cases de départ et de destination du pion
+
+    return booléen: True (le déplacement est simple)
+  """
   if xd + 1 == xo or xd - 1 == xo and yd + 1 == yo or yd - 1 == yo:
     return True
 
 
 # Vérification si le joueur doit manger
 def indication_doit_manger(joueur, deplacement_simple):
+  """
+    Fonction qui nous indique si le joueur doit manger
+
+    input joueur: le joueur qui joue
+    input deplacement_simple: évite que la prédiction bloque le déplacement dans le cas d'un déplacment simple
+
+    return prevision: nous indique quel pion manger
+  """
   prevision = []
   joueur_inverse = quel_joueur(not joueur)
   joueur = quel_joueur(joueur)
@@ -110,6 +136,13 @@ def indication_doit_manger(joueur, deplacement_simple):
 
 # Sauvegarde des informations de jeu
 def sauvegarde(destination, joueur):
+  """
+    Fonction qui sauvegarde les déplacements des joueurs
+
+    input destination: coordonnées de la case de destination du pion
+    input joueur: le joueur qui joue
+
+  """
 
   # Conversion des coordonnées
   xd = int(destination[:1])
@@ -121,6 +154,13 @@ def sauvegarde(destination, joueur):
 
 # Fonction pour savoir quel joueur joue
 def quel_joueur(joueur):
+  """
+    Fonction qui permet d convertir la valeur du joueur en son nom d'usage
+
+    input joueur: le joueur qui joue
+
+    return: joueur
+  """
   if isinstance(joueur, bool):
     if joueur: 
       joueur = 'O'
@@ -133,6 +173,14 @@ def quel_joueur(joueur):
 
 # Fonction pour savoir si la case existe
 def case_existante(x, y):
+  """
+    Fonction qui nous informe si la case existe dans le deplacement_arriere
+
+    input x,y: coordonnées de la case
+
+    return booléen: True (la case existe)
+    return booléen: False (la case n'existe pas )
+  """
   if damier[x][y] != '':
     return True
   else:
@@ -141,16 +189,37 @@ def case_existante(x, y):
 
 # Fonction pour vérifier que la case est vide
 def case_vide(x, y):
+  """
+    Fonction qui vregarde si la case est vide
+
+    input x,y: coordonnées de la case
+
+    return: True ou False
+  """
   return damier[x][y] == '-'
 
 
 # Fonction pour vérifier que le déplacement est possible
-def deplacement_possible(xo, xd, yo, yd): 
+def deplacement_possible(xo, xd, yo, yd):
+  """
+    Fonction qui vérifie que le déplacement est possible
+
+    input xo, xd, yo, yd: coordonnées des cases de départ et de destination du pion
+
+    return: True ou False
+  """
   return yo != yd
 
   
 # Vérification qu'on aille pas en arrière pour rien
 def deplacement_arriere(xo, xd, joueur):
+  """
+    Fonction qui vérifie qu'on aille pas en arrière pour rien
+
+    input xo, xd: coordonnée x de la cases de départ et de la case de destination du pion
+
+    return booléen: False (on peut peut pas aller en arrière)
+  """
   if joueur == "X" and xo + 1 == xd:
     return False
   elif joueur == "O" and xo - 1 == xd:
@@ -159,6 +228,17 @@ def deplacement_arriere(xo, xd, joueur):
 
 # Fonction pour regarder si on peut manger
 def manger(xo, xd, yo, yd, joueur, prevision):
+  """
+    Fonction qui permet de regarder si on peut manger
+
+    input xo, xd, yo, yd: coordonnées des cases de départ et de destination du pion
+    input joueur: le joueur qui joue
+    input prevision: stocke les indications pour manger
+
+    return booléen: True (on peut manger)
+    return booléen: False (on ne peut pas manger)
+
+  """
   # On vérifie que la personne respecte bien les indications
   if prevision != [] and f"D{xd}{yd}" and f"S{xo}{yo}" not in prevision:
     return "doitmanger"
