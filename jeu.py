@@ -20,9 +20,9 @@ def quel_deplacement(source, destination, joueur, prevision):
     result = is_deplacement(xo, xd, yo, yd)
     global deplacement_simple
     if result == True:
-      deplacement_simple = 1
+      deplacement_simple = "deplacement_simple"
     else:
-      deplacement_simple = 0
+      deplacement_simple = "deplacement_complexe"
 
     # Vérification si la case est existante
     result = case_existante(xd, yd)

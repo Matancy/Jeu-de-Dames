@@ -41,7 +41,7 @@ while partie != 5:
             joueur = not joueur
 
     # Si le joueur fait un déplacement simple, pour pas le bloquer
-    elif result == 1:
+    elif result == "deplacement_simple":
         deplacement_simple = True
 
     # On regarde si une dame est crée
