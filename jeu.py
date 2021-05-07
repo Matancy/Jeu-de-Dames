@@ -1,5 +1,6 @@
 from game_data import *
 from dame import *
+from verification_deplacement import *
 
 
 # Gestion des déplacements du joueur
@@ -28,7 +29,7 @@ def quel_deplacement(source, destination, joueur, prevision):
   if joueur in damier[xo][yo]:
 
     # On regarde si il s'agit d'un déplacement simple
-    result = is_deplacement(xo, xd, yo, yd)
+    result = is_deplacement_simple(xo, xd, yo, yd)
     global deplacement_simple
     if result == True:
       deplacement_simple = "deplacement_simple"
@@ -83,19 +84,6 @@ def quel_deplacement(source, destination, joueur, prevision):
   else:
     print(f'{bcolors.WARNING}Mauvais joueur{bcolors.ENDC}')
     return "Erreur"
-
-
-# Fonction pour voir si c'est un déplacement
-def is_deplacement(xo, xd, yo, yd):
-  """
-    Fonction qui nous informe si c'est un déplacement simple
-
-    input xo, xd, yo, yd: coordonnées des cases de départ et de destination du pion
-
-    return booléen: True (le déplacement est simple)
-  """
-  if xd + 1 == xo or xd - 1 == xo and yd + 1 == yo or yd - 1 == yo:
-    return True
 
 
 # Vérification si le joueur doit manger
@@ -197,33 +185,6 @@ def case_vide(x, y):
     return: True ou False
   """
   return damier[x][y] == '-'
-
-
-# Fonction pour vérifier que le déplacement est possible
-def deplacement_possible(xo, xd, yo, yd):
-  """
-    Fonction qui vérifie que le déplacement est possible
-
-    input xo, xd, yo, yd: coordonnées des cases de départ et de destination du pion
-
-    return: True ou False
-  """
-  return yo != yd
-
-  
-# Vérification qu'on aille pas en arrière pour rien
-def deplacement_arriere(xo, xd, joueur):
-  """
-    Fonction qui vérifie qu'on aille pas en arrière pour rien
-
-    input xo, xd: coordonnée x de la cases de départ et de la case de destination du pion
-
-    return booléen: False (on peut peut pas aller en arrière)
-  """
-  if joueur == "X" and xo + 1 == xd:
-    return False
-  elif joueur == "O" and xo - 1 == xd:
-    return False
 
 
 # Fonction pour regarder si on peut manger
