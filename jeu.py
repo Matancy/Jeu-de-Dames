@@ -1,6 +1,7 @@
 from game_data import *
 from dame import *
 from verification_deplacement import *
+from verification_damier import *
 
 
 # Gestion des déplacements du joueur
@@ -157,34 +158,6 @@ def quel_joueur(joueur):
   else: 
     joueur = '-'
   return joueur
-
-
-# Fonction pour savoir si la case existe
-def case_existante(x, y):
-  """
-    Fonction qui nous informe si la case existe dans le deplacement_arriere
-
-    input x,y: coordonnées de la case
-
-    return booléen: True (la case existe)
-    return booléen: False (la case n'existe pas )
-  """
-  if damier[x][y] != '':
-    return True
-  else:
-    return False
-    
-
-# Fonction pour vérifier que la case est vide
-def case_vide(x, y):
-  """
-    Fonction qui vregarde si la case est vide
-
-    input x,y: coordonnées de la case
-
-    return: True ou False
-  """
-  return damier[x][y] == '-'
 
 
 # Fonction pour regarder si on peut manger
