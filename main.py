@@ -32,8 +32,9 @@ while partie != 5:
     # Affichage du plateau de jeu en fonction de la configuration
     if game_display_type == "console":
         affichage_damier_console(damier)
-    else:
-        affichage_damier_graphique(damier)
+    #else:
+        # affichage_damier_graphique(damier)
+        # Ne pas oublier de gérer cette zone pour ne pas afficher plusieurs fois le damier
 
 
     # On demande quel déplacement le joueur veut faire
