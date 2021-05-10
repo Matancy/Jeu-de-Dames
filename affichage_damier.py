@@ -27,6 +27,15 @@ def affichage_damier_console(damier):
 
 
 # Affichage du damier en mode graphique
+def affichage_damier_graphique(damier):
+  """
+  Cette fonction affiche le damier en interface graphique
+  Input (list): damier
+  Return (display): Affichage du damier
+  """
+
+
+# Création du damier en mode graphique
 def creation_plateau(size, couleur1, couleur2):
 
   for y in range(5):
