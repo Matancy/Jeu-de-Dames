@@ -7,6 +7,7 @@
 
 game_display_type = "console"
 #game_display_type = "graphical"
+game_display_size = 800 # Ne pas désactiver
 
 # Mode de jeu
 
