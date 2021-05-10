@@ -29,8 +29,12 @@ while partie != 5:
         # On refais les indications de déplacement avec le nouveau joueur
         prevision = indication_doit_manger(joueur, deplacement_simple)
 
-    # On affiche la grille de jeu
-    affichage_damier(damier)
+    # Affichage du plateau de jeu en fonction de la configuration
+    if game_display_type == "console":
+        affichage_damier_console(damier)
+    else:
+        affichage_damier_graphique(damier)
+
 
     # On demande quel déplacement le joueur veut faire
     player_name = quel_joueur(joueur)
