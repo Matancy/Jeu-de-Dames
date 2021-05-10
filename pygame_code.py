@@ -3,18 +3,9 @@ import pygame
 
 
 
-def plateau(size, couleur1, couleur2):
-    for y in range(5):
-        for i in range(5):
-            pygame.draw.rect(surf, couleur1, (0 + (size/5 * i), 0 + (size/5 * y), size/10, size/10))
-            pygame.draw.rect(surf, couleur2, (size/10 + (size/5 * i), 0 + (size/5 * y), size/10, size/10))
-        for i in range(5):
-            pygame.draw.rect(surf, couleur2, (0 + (size/5 * i), size/10 + (size/5 * y), size/10, size/10))
-            pygame.draw.rect(surf, couleur1, (size/10 + (size/5 * i), size/10 + (size/5 * y), size/10, size/10))
 
 
-def pion(size, couleur, x, y):
-    pygame.draw.circle(surf, couleur, (x, y), int(size/22))
+
 def x(case):
     return int((size/20)+(2*case*size/20))
 def y(case):
@@ -39,9 +30,6 @@ def depart(size, couleur1, couleur2):
 
 pygame.init()
 
-
-size = 800
-surf = pygame.display.set_mode((size, size))
 
 
 beige1 = pygame.Color(226, 188, 116)
