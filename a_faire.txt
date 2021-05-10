@@ -4,10 +4,12 @@ Liste de choses à faire
 => Fonctions pour faire déplacer la Dame
 => Fonctions pour faire manger la Dame
 
-- Réorganiser le code pour simplifier son fonctionnement
+- Réorganiser le code pour simplifier son fonctionnement (en cours)
 
-- Documenter les fonctions
+- Documenter les fonctions (en cours)
 => Sortir un dossier automatiquement avec la doc
+
+- Mettre en place l'affichage graphique (créer fonction pour afficher plateau et gérer le système d'affichage)
 
 Partie IA :
 - Réfléchir sur un système de points pour les actions
