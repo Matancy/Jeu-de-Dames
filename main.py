@@ -3,12 +3,18 @@ from jeu import *
 from data import *
 from fin_de_partie import *
 from verification_dame import *
-#from pygame_code import *
+import pygame
 
 # Variable de déplacement évitant de bloquer le jeu par la prévision
 deplacement_simple = False
 
 while partie != 5:
+
+    # Système de fermeture de l'interface graphique
+    if game_display_type == "graphical":
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                partie = 5
 
     # On regarde si le joueur précédent peut encore manger
     prevision = indication_doit_manger(joueur, deplacement_simple)
