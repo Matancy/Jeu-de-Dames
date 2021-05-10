@@ -1,7 +1,9 @@
+from data import *
+from config import *
+import pygame
 #
 # Fichier regroupant les fonctions relatives à l'affichage du damier
 #
-from data import *
 
 
 # Affichage du damier en version console
