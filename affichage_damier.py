@@ -5,8 +5,10 @@ import pygame
 # Fichier regroupant les fonctions relatives à l'affichage du damier
 #
 
+plateau = pygame.display.set_mode((game_display_size, game_display_size)) # Variable du plateau
 
-# Affichage du damier en version console
+
+# Affichage du damier en mode console
 def affichage_damier_console(liste):
   """
   Cette fonction permet d'afficher un damier, elle reçoit une liste et affiche le damier. Elle peut prendre le damier ou la grille de Manoury.
