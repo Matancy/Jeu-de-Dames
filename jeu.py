@@ -1,5 +1,5 @@
 from game_data import *
-from dame import *
+from verification_dame import *
 from verification_deplacement import *
 from verification_damier import *
 
