@@ -6,10 +6,7 @@ import pygame
 
 
 
-def x(case):
-    return int((size/20)+(2*case*size/20))
-def y(case):
-    return int((size/20)+(2*case*size/20))
+
 
 
 def depart(size, couleur1, couleur2):

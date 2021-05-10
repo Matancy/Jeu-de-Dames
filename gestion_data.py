@@ -1,4 +1,5 @@
 from data import *
+from config import *
 #
 # Fichier regroupant les fonctions de gestion de données
 #
@@ -38,3 +39,12 @@ def quel_joueur(joueur):
   else:
     joueur = '-'
   return joueur
+
+
+# Fonction pour convertir les coordonnée x en coordonnés plateau
+def convert_x(case):
+    return int((game_display_size/20)+(2*case*game_display_size/20))
+
+# Fonction pour convertir les coordonnées y en coordonnées plateau
+def convert_y(case):
+    return int((game_display_size/20)+(2*case*game_display_size/20))
