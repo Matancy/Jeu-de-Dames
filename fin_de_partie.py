@@ -1,3 +1,6 @@
+#
+# Fichier regroupant les fonctions relatives à la fin de partie
+#
 from game_data import *
 
 
