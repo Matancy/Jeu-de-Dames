@@ -23,3 +23,19 @@ def affichage_damier_console(liste):
       print (liste[i][e],end=esp)
     print("\n")
 
+
+# Affichage du damier en mode graphique
+def creation_plateau(size, couleur1, couleur2):
+
+  for y in range(5):
+    for i in range(5):
+      pygame.draw.rect(plateau, couleur1, (0 + (size / 5 * i), 0 + (size / 5 * y), size / 10, size / 10))
+      pygame.draw.rect(plateau, couleur2, (size / 10 + (size / 5 * i), 0 + (size / 5 * y), size / 10, size / 10))
+    for i in range(5):
+      pygame.draw.rect(plateau, couleur2, (0 + (size / 5 * i), size / 10 + (size / 5 * y), size / 10, size / 10))
+      pygame.draw.rect(plateau, couleur1, (size / 10 + (size / 5 * i), size / 10 + (size / 5 * y), size / 10, size / 10))
+
+
+# Affichage d'un pion
+def affichage_pion(size, couleur, x, y):
+  pygame.draw.circle(plateau, couleur, (x, y), int(size / 22))
