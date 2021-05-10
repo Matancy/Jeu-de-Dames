@@ -1,8 +1,8 @@
+from gestion_data import *
+from jeu import *
 #
 # Fichier regroupant les vérifications relatives à la dame
 #
-from data import *
-from jeu import *
 
 
 # On regarde si une dame est créée

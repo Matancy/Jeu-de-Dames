@@ -1,7 +1,7 @@
+from data import *
 #
 # Fichier regroupant les fonctions de gestion de données
 #
-from data import *
 
 
 # Sauvegarde des informations de jeu

@@ -2,6 +2,7 @@
 # Fichier permettant de configurer la partie
 #
 
+
 # Mode d'affichage
 
 game_display_type = "console"

@@ -7,6 +7,7 @@ partie = 1 # Défini la partie comme en cours
 joueur = False # Défini quel joueur est en train de jouer (1 croix / 0 Rond)
 esp = "\t" # Variable de tabulation
 
+
 # Variable regroupant les informations du damier
 damier = [
           ['','O','','O','','O','','O','','O'],
@@ -20,7 +21,8 @@ damier = [
           ['','X','','X','','X','','X','','X'],
           ['X','','X','','X','','X','','X','']
         ]
-        
+
+
 # Fonction pour afficher des couleurs
 class bcolors:
   HEADER = '\033[95m'
