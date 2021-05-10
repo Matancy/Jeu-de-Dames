@@ -1,7 +1,11 @@
+#
+# Fichier regroupant les fonctions relatives à l'affichage du damier
+#
 from game_data import *
 
-# Affichage du damier
-def affichage_damier(liste):
+
+# Affichage du damier en version console
+def affichage_damier_console(liste):
   """
   Cette fonction permet d'afficher un damier, elle reçoit une liste et affiche le damier. Elle peut prendre le damier ou la grille de Manoury.
   In : liste
