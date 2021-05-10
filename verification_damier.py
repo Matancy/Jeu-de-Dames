@@ -1,4 +1,4 @@
-from game_data import *
+from data import *
 #
 # Fichier regroupant les fonctions de vérification du damier
 #

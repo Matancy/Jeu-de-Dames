@@ -1,7 +1,7 @@
 #
 # Fichier regroupant les vérifications relatives à la dame
 #
-from game_data import *
+from data import *
 from jeu import *
 
 

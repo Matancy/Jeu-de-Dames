@@ -1,7 +1,7 @@
 #
 # Fichier regroupant les fonctions relatives à l'affichage du damier
 #
-from game_data import *
+from data import *
 
 
 # Affichage du damier en version console
