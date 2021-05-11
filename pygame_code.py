@@ -1,6 +1,6 @@
 import pygame
 
-
+"""
 
 
 
@@ -53,17 +53,12 @@ while run :
 
     depart(size, test, orange)
 
-    """
     pion(size, beige2, x(1), y(0))
     pion(size, orange, x(0), y(9))
-
-
-    """
-
 
     pygame.display.flip()
 
 
 
 
-pygame.quit()
+pygame.quit()"""
