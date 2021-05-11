@@ -1,5 +1,6 @@
 from affichage_damier import *
 from jeu import *
+from config import *
 from data import *
 from fin_de_partie import *
 from verification_dame import *
