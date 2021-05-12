@@ -1,4 +1,5 @@
 from data import *
+from gestion_data import *
 from verification_dame import *
 from verification_deplacement import *
 from verification_damier import *
@@ -138,7 +139,8 @@ def manger(xo, xd, yo, yd, joueur, prevision):
 
   """
   # On vérifie que la personne respecte bien les indications
-  if prevision != [] and f"D{xd}{yd}" and f"S{xo}{yo}" not in prevision:
+  result = respect_indications(xo, xd, yo, yd, prevision)
+  if result == "doitmanger":
     return "doitmanger"
 
   # On calcule les coordonnées du point au milieu

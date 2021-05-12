@@ -49,3 +49,11 @@ def convert_x(case):
 # Fonction pour convertir les coordonnées y en coordonnées plateau
 def convert_y(case):
     return int((game_display_size/20)+(2*case*game_display_size/20))
+
+
+def respect_indications(xo, xd, yo, yd, prevision):
+    if prevision != []:
+        return "doitmanger"
+    elif f"D{xd}{yd}" and f"S{xo}{yo}" not in prevision:
+        return "doitmanger"
+    return "ok"
