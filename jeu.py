@@ -113,37 +113,18 @@ def manger(xo, xd, yo, yd, joueur, prevision):
   else:
     ymilieu = result
 
-  # On regarde si on a un déplacement pour manger (2 lignes)
-  if joueur == "X":
-      # Manger en avant pour X
-      if damier[xd + 1][ymilieu] == "O" and xo-2 == xd:
+  xmilieu = [
+    [["O"], [xd+1], [xo-2], ["X"]],
+    [["O"], [xd-1], [xo+2], ["X"]],
+    [["X"], [xd+1], [xo-2], ["O"]],
+    [["X"], [xd-1], [xo+2], ["O"]]
+  ]
+  for el in xmilieu:
+    # On regarde si on a le bon joueur => appliquer les bonnes situations
+    if joueur == el[0][0]:
+      # On regarde si le joueur à manger est bien entre la source et destination, et si la destination est la bonne
+      if damier[el[0][1]][ymilieu] == el[0][3] and el[0][2] == xd:
         # On enregistre les déplacements
-        xmilieu = xd + 1
-        sauvegarde(f"{xmilieu}{ymilieu}", "-")
-        return "mange"
-      # Manger en arrière pour X
-      elif damier[xd - 1][ymilieu] == "O" and xo+2 == xd:
-        # On enregistre les déplacements
-        xmilieu = xd - 1
-        sauvegarde(f"{xmilieu}{ymilieu}", "-")
-        return "mange"
-      else:
-        return "pasmange"
-  else:
-      # Manger avant pour O
-      if damier[xd - 1][ymilieu] == "X" and xo+2 == xd:
-        # On enregistre les déplacements
-        xmilieu = xd - 1
-        sauvegarde(f"{xmilieu}{ymilieu}", "-")
-        return "mange"
-      # Manger arrière pour O
-      elif damier[xd + 1][ymilieu] == "X" and xo-2 == xd:
-        # On enregistre les déplacements
-        xmilieu = xd + 1
-        sauvegarde(f"{xmilieu}{ymilieu}", "-")
-        print(xd+1, ymilieu)
-        return "mange"
-      else:
-        return "pasmange"
+        sauvegarde(f"{el[0][1]}{ymilieu}", "-")
+    return "mange"
   return "pasmange"
-
