@@ -38,3 +38,45 @@ def indication_doit_manger(joueur, deplacement_simple):
               prevision.append(f"D{el[0][0]}{el[1][0]}")
 
   return prevision
+
+
+# Fonction pour regarder si on peut manger
+def manger(xo, xd, yo, yd, joueur, prevision):
+  """
+    Fonction qui permet de regarder si on peut manger
+
+    input xo, xd, yo, yd: coordonnées des cases de départ et de destination du pion
+    input joueur: le joueur qui joue
+    input prevision: stocke les indications pour manger
+
+    return booléen: True (on peut manger)
+    return booléen: False (on ne peut pas manger)
+
+  """
+  # On vérifie que la personne respecte bien les indications
+  result = respect_indications(xo, xd, yo, yd, prevision)
+  if result == "doitmanger":
+    return "doitmanger"
+
+  # On calcule les coordonnées du point au milieu
+  result = middle_coords(yo, yd)
+  if result == "nointention":
+    return "nointention"
+  else:
+    ymilieu = result
+
+  xmilieu = [
+    [["O"], [xd+1], [xo-2], ["X"]],
+    [["O"], [xd-1], [xo+2], ["X"]],
+    [["X"], [xd+1], [xo-2], ["O"]],
+    [["X"], [xd-1], [xo+2], ["O"]]
+  ]
+  for el in xmilieu:
+    # On regarde si on a le bon joueur => appliquer les bonnes situations
+    if joueur == el[0][0]:
+      # On regarde si le joueur à manger est bien entre la source et destination, et si la destination est la bonne
+      if damier[el[0][1]][ymilieu] == el[0][3] and el[0][2] == xd:
+        # On enregistre les déplacements
+        sauvegarde(f"{el[0][1]}{ymilieu}", "-")
+    return "mange"
+  return "pasmange"
