@@ -107,14 +107,11 @@ def manger(xo, xd, yo, yd, joueur, prevision):
     return "doitmanger"
 
   # On calcule les coordonnées du point au milieu
-  if yo + 2 == yd:
-    ymilieu = yd - 1
-  elif yd + 2 == yo:
-    ymilieu = yd + 1
-  elif yd + 1 == yo or yd - 1 == yo:
+  result = middle_coords(yo, yd)
+  if result == "nointention":
     return "nointention"
   else:
-    return "nointention" # Aucune volonté de manger
+    ymilieu = result
 
   # On regarde si on a un déplacement pour manger (2 lignes)
   if joueur == "X":

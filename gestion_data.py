@@ -51,9 +51,22 @@ def convert_y(case):
     return int((game_display_size/20)+(2*case*game_display_size/20))
 
 
+# Fonction pour vérifier si on respecte les indications
 def respect_indications(xo, xd, yo, yd, prevision):
     if prevision != []:
         return "doitmanger"
     elif f"D{xd}{yd}" and f"S{xo}{yo}" not in prevision:
         return "doitmanger"
     return "ok"
+
+
+# Fonction pour calculer les coordonées du mileu d'un déplacement
+def middle_coords(yo, yd):
+    if yo + 2 == yd:
+        return yd - 1
+    elif yd + 2 == yo:
+        return yd + 1
+    elif yd + 1 == yo or yd - 1 == yo:
+        return "nointention"
+    else:
+        return "nointention"  # Aucune volonté de manger
