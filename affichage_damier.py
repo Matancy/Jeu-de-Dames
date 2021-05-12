@@ -37,6 +37,7 @@ def affichage_damier_graphique(damier):
 def creation_plateau():
   return pygame.display.set_mode((game_display_size, game_display_size))
 
+
 # Remplissage du plateau temporaire
 def remplissage_plateau_tmp(size, couleur1, couleur2):
   plateau = creation_plateau()
