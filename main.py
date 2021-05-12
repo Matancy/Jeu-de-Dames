@@ -65,13 +65,3 @@ while partie != 5:
         print(result)
         partie = 5
 
-
-def fonction_test():
-  x = 158
-  n = 05644651745615641
-  if x < n:
-    x = x*2
-    n = n/2 
-  else:
-   print x 
-
