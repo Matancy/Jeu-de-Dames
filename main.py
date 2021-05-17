@@ -5,6 +5,7 @@ from data import *
 from fin_de_partie import *
 from verification_dame import *
 import pygame
+import pygame_code 
 
 # Variable de déplacement évitant de bloquer le jeu par la prévision
 deplacement_simple = False
