@@ -23,12 +23,12 @@ def y(case):
 
 
 def dessiner_tableau (size, couleurO, couleurX):
-  for i in range (9):
-    for j in range (9):
+  for i in range (10):
+    for j in range (10):
       if damier[i][j] == 'O':
-        pion(size, couleurO, x(i), y(j))
+        pion(size, couleurO, x(j), y(i))
       elif damier[i][j] == 'X':
-        pion(size, couleurX, x(i), y(j))
+        pion(size, couleurX, x(j), y(i))
 
 
 pygame.init()
