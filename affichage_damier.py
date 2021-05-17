@@ -25,15 +25,15 @@ def affichage_damier_console(damier):
     print("\n")
 
 
+"""
 # Affichage du damier en mode graphique
 def affichage_damier_graphique(damier):
-  """
-  Cette fonction affiche le damier en interface graphique
-  Input (list): damier
-  Return (display): Affichage du damier
-  """
+  
+  #Cette fonction affiche le damier en interface graphique
+  #Input (list): damier
+  #Return (display): Affichage du damier
+  
 
-"""
 # Création du damier en mode graphique
 def creation_plateau():
   return pygame.display.set_mode((game_display_size, game_display_size))
