@@ -36,15 +36,20 @@ def Yvaleur(Y):
   return Y//(int(size/10))
 
 
-def jouer ():
-  if event.type == pygame.MOUSEBUTTONDOWN:
-    if pygame.mouse.get_pressed() == (1, 0, 0):
-      Y, X = pygame.mouse.get_pos()
-      print (X,Y)
-      x, y  = Xvaleur(X), Yvaleur(Y)
-      print(x,y)
+def point_de_depart ():
+  Yo, Xo = pygame.mouse.get_pos()
+  print (Xo,Yo)
+  xOgraphique, yOgraphique  = Xvaleur(Xo), Yvaleur(Yo)
+  print(xOgraphique, yOgraphique)
+  return (xOgraphique, yOgraphique)
+   
 
-
+def point_d_arriver ():
+  Yd, Xd = pygame.mouse.get_pos()
+  print (Xd,Yd)
+  xDgraphique, yDgraphique  = Xvaleur(Xd), Yvaleur(Yd)
+  print(xDgraphique, yDgraphique, 'test')
+  return (xDgraphique, yDgraphique)
 
 
 pygame.init()
@@ -72,7 +77,12 @@ while run :
             run = False
     plateau(size, beige1, marron2)
     dessiner_tableau(size, gris, orange)
-    jouer()
+    if event.type == pygame.MOUSEBUTTONDOWN:
+      if pygame.mouse.get_pressed() == (1, 0, 0):
+        point_de_depart()
+    if event.type == pygame.MOUSEBUTTONDOWN:
+      if pygame.mouse.get_pressed() == (1, 0, 0):        
+        point_d_arriver()
 
     """
     pion(size, gris, x(1), y(0))

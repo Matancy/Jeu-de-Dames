@@ -2,6 +2,7 @@ from data import *
 from verification_dame import *
 from verification_deplacement import *
 from verification_damier import *
+from pygame_code import *
 
 
 # Gestion des déplacements du joueur
@@ -21,10 +22,30 @@ def quel_deplacement(source, destination, joueur, prevision):
   joueur = quel_joueur(joueur)
 
   # Conversion des coordonnées
-  xo = int(source[:1])
+  """
+
+_________________________________________________________________________
+
+ATTENTION !
+
+j'ai ici remplacer les valeurs que prennaient xo, yo, xd, yd 
+par les valeur des coordonnées de notre clic sur le graphique 
+
+
+        AVANT
+
+ xo = int(source[:1])
   yo = int(source[1:])
   xd = int(destination[:1])
   yd = int(destination[1:])
+
+__________________________________________________________________________
+
+"""
+  xo = xOgraphique
+  yo = yOgraphique
+  xd = xDgraphique
+  yd = yDgraphique
 
   # On regarde si c'est le bon joueur qui joue
   if joueur in damier[xo][yo]:
