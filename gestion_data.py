@@ -65,7 +65,6 @@ def respect_indications(xo, xd, yo, yd, prevision):
         return "doitmanger"
 
 
-
 # Fonction pour calculer les coordonées du mileu d'un déplacement
 def middle_coords(yo, yd):
     if yo + 2 == yd:
