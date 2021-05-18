@@ -71,12 +71,12 @@ def quel_deplacement(source, destination, joueur, prevision):
         print("Déplacement impossible (manger)")
         return "Erreur"
       elif result == "doitmanger":
-        print("Vous devez manger")
+        print(f"{bcolors.FAIL}Vous devez manger{bcolors.ENDC}")
         return "Erreur"
       else:
         result = deplacement_arriere(xo, xd, joueur)
         if result == "pasmange":
-          print('Déplacement impossible (deplacement_arriere)')
+          print(f"{bcolors.FAIL}Déplacement impossible (deplacement_arriere){bcolors.ENDC}")
           return "Erreur"
 
     # Sauvegarde
