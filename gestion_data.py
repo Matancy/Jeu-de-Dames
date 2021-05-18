@@ -53,14 +53,16 @@ def convert_y(case):
 
 # Fonction pour vérifier si on respecte les indications
 def respect_indications(xo, xd, yo, yd, prevision):
-    print(xo)
-    print(xd)
+    # Si la prévision est vide
     if prevision == []:
         return "ok"
-    elif f"D{xd}{yd}" and f"S{xo}{yo}" not in prevision: # Si on veut déplacer un autre pion que celui qui mange
-        return "doitmanger"
+    # Boucle pour regarder si le déplacement est dans la prévision
+    for i in range(len(prevision)):
+        if prevision[i] == f"D{xd}{yd}":
+            if prevision[i-1] == f"S{xo}{yo}":
+                return "ok"
     else:
-        return "ok"
+        return "doitmanger"
 
 
 
