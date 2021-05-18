@@ -5,4 +5,4 @@ __pycache__/pygame_code.cpython-39.pyc
 __pycache__/*
 *.pyc
 *.iml
-.idea/misc.xml
+.idea/
