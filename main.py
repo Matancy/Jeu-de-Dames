@@ -49,7 +49,6 @@ while partie != 5:
         # affichage_damier_graphique(damier)
         # Ne pas oublier de gérer cette zone pour ne pas afficher plusieurs fois le damier
 
-    print(prevision)
     # On demande quel déplacement le joueur veut faire
     player_name = quel_joueur(joueur)
     print(f"{bcolors.UNDERLINE}Joueur :{bcolors.ENDC} {player_name}")
