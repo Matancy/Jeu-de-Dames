@@ -1,5 +1,5 @@
 from gestion_data import *
-from jeu import *
+from deplacement import *
 #
 # Fichier regroupant les vérifications relatives à la dame
 #
