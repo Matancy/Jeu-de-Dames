@@ -66,17 +66,17 @@ def manger(xo, xd, yo, yd, joueur, prevision):
     ymilieu = result
 
   xmilieu = [
-    [["O"], [xd+1], [xo-2], ["X"]],
-    [["O"], [xd-1], [xo+2], ["X"]],
-    [["X"], [xd+1], [xo-2], ["O"]],
-    [["X"], [xd-1], [xo+2], ["O"]]
+    ["O", xd+1, xo-2, "X"],
+    ["O", xd-1, xo+2, "X"],
+    ["X", xd+1, xo-2, "O"],
+    ["X", xd-1, xo+2, "O"]
   ]
   for el in xmilieu:
     # On regarde si on a le bon joueur => appliquer les bonnes situations
-    if joueur == el[0][0]:
+    if joueur == el[0]:
       # On regarde si le joueur à manger est bien entre la source et destination, et si la destination est la bonne
-      if damier[el[0][1]][ymilieu] == el[0][3] and el[0][2] == xd:
+      if damier[int(str(el[1]))][ymilieu] == el[3] and el[2] == xd:
         # On enregistre les déplacements
-        sauvegarde(f"{el[0][1]}{ymilieu}", "-")
-    return "mange"
+        sauvegarde(f"{el[1]}{ymilieu}", "-")
+        return "mange"
   return "pasmange"
