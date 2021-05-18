@@ -3,6 +3,7 @@ from gestion_data import *
 from verification_dame import *
 from verification_deplacement import *
 from verification_damier import *
+from manger import *
 
 
 # Gestion des déplacements du joueur
@@ -19,6 +20,7 @@ def quel_deplacement(source, destination, joueur, prevision):
     return booléen: True (le déplacement est possible)
   """
 
+  # On récupère la variable du joueur
   joueur = quel_joueur(joueur)
 
   # Conversion des coordonnées
@@ -30,7 +32,7 @@ def quel_deplacement(source, destination, joueur, prevision):
   # On regarde si c'est le bon joueur qui joue
   if joueur in damier[xo][yo]:
 
-    # On regarde si il s'agit d'un déplacement simple
+    # Vérification si c'est un déplacement simple
     result = is_deplacement_simple(xo, xd, yo, yd)
     global deplacement_simple
     if result == True:
@@ -56,7 +58,7 @@ def quel_deplacement(source, destination, joueur, prevision):
       print("Déplacement impossible (deplacement_possible)")
       return "Erreur"
 
-    #Vérification si on a affaire à une dame ou un pion
+    # Vérification si on a affaire à une dame ou un pion
     if joueur == "\033[94mX\033[0m" or joueur == "\033[94mO\033[0m":
       pass
     else:  
