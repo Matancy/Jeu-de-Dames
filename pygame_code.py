@@ -30,6 +30,22 @@ def dessiner_tableau (size, couleurO, couleurX):
       elif damier[i][j] == 'X':
         pion(size, couleurX, x(j), y(i))
 
+def Xvaleur(X):
+  return X//(int(size/10))
+def Yvaleur(Y):
+  return Y//(int(size/10))
+
+
+def jouer ():
+  if event.type == pygame.MOUSEBUTTONDOWN:
+    if pygame.mouse.get_pressed() == (1, 0, 0):
+      Y, X = pygame.mouse.get_pos()
+      print (X,Y)
+      x, y  = Xvaleur(X), Yvaleur(Y)
+      print(x,y)
+
+
+
 
 pygame.init()
 
@@ -43,10 +59,7 @@ marron1 = pygame.Color(88, 41, 0)
 beige2 = pygame.Color(230, 200, 150)
 marron2 = pygame.Color(45, 30, 11)
 orange = pygame.Color(152, 87, 23)
-
-
 gris = pygame.Color(105, 105, 105)
-
 blanc = pygame.Color(255, 255, 255)
 noir = pygame.Color(0, 0, 0)
 run = True
@@ -58,8 +71,8 @@ while run :
         if event.type == pygame.QUIT:
             run = False
     plateau(size, beige1, marron2)
-
     dessiner_tableau(size, gris, orange)
+    jouer()
 
     """
     pion(size, gris, x(1), y(0))
