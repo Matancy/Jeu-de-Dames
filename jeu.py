@@ -22,30 +22,11 @@ def quel_deplacement(source, destination, joueur, prevision):
   joueur = quel_joueur(joueur)
 
   # Conversion des coordonnées
-  """
 
-_________________________________________________________________________
-
-ATTENTION !
-
-j'ai ici remplacer les valeurs que prennaient xo, yo, xd, yd 
-par les valeur des coordonnées de notre clic sur le graphique 
-
-
-        AVANT
-
- xo = int(source[:1])
+  xo = int(source[:1])
   yo = int(source[1:])
   xd = int(destination[:1])
   yd = int(destination[1:])
-
-__________________________________________________________________________
-
-"""
-  xo = xOgraphique
-  yo = yOgraphique
-  xd = xDgraphique
-  yd = yDgraphique
 
   print(xo, yo, xd, yd)
 

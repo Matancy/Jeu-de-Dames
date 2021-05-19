@@ -38,13 +38,24 @@ while partie != 5:
         # affichage_damier_graphique(damier)
         # Ne pas oublier de gérer cette zone pour ne pas afficher plusieurs fois le damier
 
+    """
+    _________________________________________________________________________
 
+    ATTENTION !
+
+    j'ai remplacer source et destination 
+
+
+
+    __________________________________________________________________________
+
+    """
     # On demande quel déplacement le joueur veut faire
     player_name = quel_joueur(joueur)
     print(f"{bcolors.UNDERLINE}Joueur :{bcolors.ENDC} {player_name}")
-    source = xOgraphique*10+yOgraphique
-    destination = xDgraphique*10+yDgraphique
-    print(source,destination)
+    source = xOgraphique + yOgraphique
+    destination = xDgraphique + yDgraphique
+    print(source, destination)
 
     # On déplace le joueur
     result = quel_deplacement(source, destination, joueur, prevision)
