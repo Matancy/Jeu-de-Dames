@@ -50,3 +50,29 @@ def convert_x(case):
 # Fonction pour convertir les coordonnées y en coordonnées plateau
 def convert_y(case):
     return int((game_display_size/20)+(2*case*game_display_size/20))
+
+
+# Fonction pour vérifier si on respecte les indications
+def respect_indications(xo, xd, yo, yd, prevision):
+    # Si la prévision est vide
+    if prevision == []:
+        return "ok"
+    # Boucle pour regarder si le déplacement est dans la prévision
+    for i in range(len(prevision)):
+        if prevision[i] == f"D{xd}{yd}":
+            if prevision[i-1] == f"S{xo}{yo}":
+                return "ok"
+    else:
+        return "doitmanger"
+
+
+# Fonction pour calculer les coordonées du mileu d'un déplacement
+def middle_coords(yo, yd):
+    if yo + 2 == yd:
+        return yd - 1
+    elif yd + 2 == yo:
+        return yd + 1
+    elif yd + 1 == yo or yd - 1 == yo:
+        return "nointention"
+    else:
+        return "nointention"  # Aucune volonté de manger

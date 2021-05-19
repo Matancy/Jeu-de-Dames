@@ -1,5 +1,6 @@
 from gestion_data import *
-from data import damier 
+from data import *
+
 #
 # Fichier regroupant les vérifications relatives à la dame
 #
