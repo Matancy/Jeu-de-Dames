@@ -1,6 +1,7 @@
 import pygame
 import affichage_damier
 from data import *
+from jeu import *
 
 
 
@@ -63,21 +64,32 @@ while run :
       run = False
   plateau(size, beige1, marron2)
   dessiner_tableau(size, gris, orange)
-
-  if event.type == pygame.MOUSEBUTTONDOWN:
-    if pygame.mouse.get_pressed() == (1, 0, 0):
-      Yo, Xo = pygame.mouse.get_pos()
-      xOgraphique, yOgraphique  = str(Xvaleur(Xo)), str(Yvaleur(Yo))
-      print("depart :",xOgraphique, yOgraphique)
-  if event.type == pygame.MOUSEBUTTONDOWN:
-    if pygame.mouse.get_pressed() == (0, 0, 1):        
-      Yd, Xd = pygame.mouse.get_pos()
-      xDgraphique, yDgraphique  = str(Xvaleur(Xd)), str(Yvaleur(Yd))
-      print("arriver :",xDgraphique, yDgraphique)
-  
-  dessiner_tableau(size, gris, orange)
-
-
+  if joueur == 'O'
+    if event.type == pygame.MOUSEBUTTONDOWN:
+      if pygame.mouse.get_pressed() == (1, 0, 0):
+        Yo, Xo = pygame.mouse.get_pos()
+        xOgraphique, yOgraphique  = str(Xvaleur(Xo)), str(Yvaleur(Yo))
+        print("depart :",xOgraphique, yOgraphique)
+    if event.type == pygame.MOUSEBUTTONDOWN:
+      if pygame.mouse.get_pressed() == (0, 0, 1):        
+        Yd, Xd = pygame.mouse.get_pos()
+        xDgraphique, yDgraphique  = str(Xvaleur(Xd)), str(Yvaleur(Yd))
+        print("arriver :",xDgraphique, yDgraphique)
+    
+    dessiner_tableau(size, gris, orange)
+  elif joueur == 'X'
+    if event.type == pygame.MOUSEBUTTONDOWN:
+      if pygame.mouse.get_pressed() == (1, 0, 0):
+        Yo, Xo = pygame.mouse.get_pos()
+        xOgraphique, yOgraphique  = str(Xvaleur(Xo)), str(Yvaleur(Yo))
+        print("depart :",xOgraphique, yOgraphique)
+    if event.type == pygame.MOUSEBUTTONDOWN:
+      if pygame.mouse.get_pressed() == (0, 0, 1):        
+        Yd, Xd = pygame.mouse.get_pos()
+        xDgraphique, yDgraphique  = str(Xvaleur(Xd)), str(Yvaleur(Yd))
+        print("arriver :",xDgraphique, yDgraphique)
+    
+    dessiner_tableau(size, gris, orange)
   """
   pion(size, gris, x(1), y(0))
   pion(size, orange, x(0), y(9))

@@ -43,7 +43,7 @@ while partie != 5:
 
     ATTENTION !
 
-    j'ai remplacer source et destination 
+    j'ai remplacer source et destination
 
 
 
