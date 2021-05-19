@@ -17,8 +17,8 @@ def sauvegarde(destination, joueur):
     """
 
     # Conversion des coordonnées
-    xd = xDgraphique
-    yd = yDgraphique
+    xd = int(destination[:1])
+    yd = int(destination[1:])
 
     # Modification dans les informations du jeu
     damier[xd][yd] = joueur
