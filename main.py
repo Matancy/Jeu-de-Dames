@@ -6,7 +6,7 @@ from fin_de_partie import *
 from verification_dame import *
 from manger import *
 import pygame
-import pygame_code 
+from pygame_code import *
 
 # Variable de déplacement évitant de bloquer le jeu par la prévision
 deplacement_simple = False
