@@ -36,7 +36,7 @@ def Xvaleur(X):
 def Yvaleur(Y):
   return Y//(int(size/10))
 
-
+joueur = quel_joueur(joueur)
 
 
 pygame.init()
@@ -64,7 +64,7 @@ while run :
       run = False
   plateau(size, beige1, marron2)
   dessiner_tableau(size, gris, orange)
-  if joueur == 'O'
+  if joueur == 'O':
     if event.type == pygame.MOUSEBUTTONDOWN:
       if pygame.mouse.get_pressed() == (1, 0, 0):
         Yo, Xo = pygame.mouse.get_pos()
@@ -77,7 +77,7 @@ while run :
         print("arriver :",xDgraphique, yDgraphique)
     
     dessiner_tableau(size, gris, orange)
-  elif joueur == 'X'
+  elif joueur == 'X':
     if event.type == pygame.MOUSEBUTTONDOWN:
       if pygame.mouse.get_pressed() == (1, 0, 0):
         Yo, Xo = pygame.mouse.get_pos()
