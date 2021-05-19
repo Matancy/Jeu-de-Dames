@@ -1,5 +1,6 @@
 from data import *
 from config import *
+from pygame_code import*
 #
 # Fichier regroupant les fonctions de gestion de données
 #
@@ -16,8 +17,8 @@ def sauvegarde(destination, joueur):
     """
 
     # Conversion des coordonnées
-    xd = int(destination[:1])
-    yd = int(destination[1:])
+    xd = xDgraphique
+    yd = yDgraphique
 
     # Modification dans les informations du jeu
     damier[xd][yd] = joueur

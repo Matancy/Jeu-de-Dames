@@ -37,18 +37,6 @@ def Yvaleur(Y):
 
 
 
-def point_de_depart ():
-  Yo, Xo = pygame.mouse.get_pos()
-  xOgraphique, yOgraphique  = Xvaleur(Xo), Yvaleur(Yo)
-  print(xOgraphique, yOgraphique)
-  return ("depart :", xOgraphique, yOgraphique)
-   
-
-def point_d_arriver ():
-  Yd, Xd = pygame.mouse.get_pos()
-  xDgraphique, yDgraphique  = Xvaleur(Xd), Yvaleur(Yd)
-  print("arriver :",xDgraphique, yDgraphique)
-  return (xDgraphique, yDgraphique)
 
 pygame.init()
 
@@ -70,30 +58,36 @@ run = True
 
 
 while run :
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            run = False
-    plateau(size, beige1, marron2)
-    dessiner_tableau(size, gris, orange)
+  for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+      run = False
+  plateau(size, beige1, marron2)
+  dessiner_tableau(size, gris, orange)
 
-    if event.type == pygame.MOUSEBUTTONDOWN:
-      if pygame.mouse.get_pressed() == (1, 0, 0):
-        point_de_depart()
-    if event.type == pygame.MOUSEBUTTONDOWN:
-      if pygame.mouse.get_pressed() == (0, 0, 1):        
-        point_d_arriver()
-
-
-    """
-    pion(size, gris, x(1), y(0))
-    pion(size, orange, x(0), y(9))
-    """
-
-
-    
+  if event.type == pygame.MOUSEBUTTONDOWN:
+    if pygame.mouse.get_pressed() == (1, 0, 0):
+      Yo, Xo = pygame.mouse.get_pos()
+      xOgraphique, yOgraphique  = Xvaleur(Xo), Yvaleur(Yo)
+      print("depart :",xOgraphique, yOgraphique)
+  if event.type == pygame.MOUSEBUTTONDOWN:
+    if pygame.mouse.get_pressed() == (0, 0, 1):        
+      Yd, Xd = pygame.mouse.get_pos()
+      xDgraphique, yDgraphique  = Xvaleur(Xd), Yvaleur(Yd)
+      print("arriver :",xDgraphique, yDgraphique)
+  
+  dessiner_tableau(size, gris, orange)
 
 
-    pygame.display.flip()
+  """
+  pion(size, gris, x(1), y(0))
+  pion(size, orange, x(0), y(9))
+  """
+
+
+  
+
+
+  pygame.display.flip()
 
 
 

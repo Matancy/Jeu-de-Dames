@@ -47,6 +47,8 @@ __________________________________________________________________________
   xd = xDgraphique
   yd = yDgraphique
 
+  print(xo, yo, xd, yd)
+
   # On regarde si c'est le bon joueur qui joue
   if joueur in damier[xo][yo]:
 
