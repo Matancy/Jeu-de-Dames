@@ -36,21 +36,19 @@ def Yvaleur(Y):
   return Y//(int(size/10))
 
 
+
 def point_de_depart ():
   Yo, Xo = pygame.mouse.get_pos()
-  print (Xo,Yo)
   xOgraphique, yOgraphique  = Xvaleur(Xo), Yvaleur(Yo)
   print(xOgraphique, yOgraphique)
-  return (xOgraphique, yOgraphique)
+  return ("depart :", xOgraphique, yOgraphique)
    
 
 def point_d_arriver ():
   Yd, Xd = pygame.mouse.get_pos()
-  print (Xd,Yd)
   xDgraphique, yDgraphique  = Xvaleur(Xd), Yvaleur(Yd)
-  print(xDgraphique, yDgraphique, 'test')
+  print("arriver :",xDgraphique, yDgraphique)
   return (xDgraphique, yDgraphique)
-
 
 pygame.init()
 
@@ -69,7 +67,7 @@ blanc = pygame.Color(255, 255, 255)
 noir = pygame.Color(0, 0, 0)
 run = True
 
-depart, arrive = "",""
+
 
 while run :
     for event in pygame.event.get():
@@ -77,26 +75,22 @@ while run :
             run = False
     plateau(size, beige1, marron2)
     dessiner_tableau(size, gris, orange)
+
     if event.type == pygame.MOUSEBUTTONDOWN:
       if pygame.mouse.get_pressed() == (1, 0, 0):
-        if depart == "":
-          depart = point_de_depart()
-          print("depart :")
-          print(depart)
-          pygame.event.clear()
+        point_de_depart()
+    if event.type == pygame.MOUSEBUTTONDOWN:
+      if pygame.mouse.get_pressed() == (0, 0, 1):        
+        point_d_arriver()
 
-      if pygame.mouse.get_pressed() == (1, 0, 0):
-        if arrive == "":
-          arrive = point_d_arriver()
-          print("arrive :")
-          print(arrive)
 
     """
     pion(size, gris, x(1), y(0))
     pion(size, orange, x(0), y(9))
     """
 
-   
+
+    
 
 
     pygame.display.flip()
