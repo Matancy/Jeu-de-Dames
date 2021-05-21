@@ -52,6 +52,12 @@ def quel_deplacement(source, destination, joueur, prevision):
       print ("Case prise (case_vide)")
       return "Erreur"
 
+    # Vérification que le déplacement ne se fasse pas en arrière
+    result = deplacement_arriere(xo, xd, joueur)
+    if result != True:
+      print(f"{bcolors.FAIL}Déplacement impossible{bcolors.ENDC}")
+      return "Erreur"
+
     # Vérification si le déplacement est possible
     result = deplacement_possible(xo, xd, yo, yd)
     if result != True:
@@ -73,11 +79,6 @@ def quel_deplacement(source, destination, joueur, prevision):
       elif result == "doitmanger":
         print(f"{bcolors.FAIL}Vous devez manger{bcolors.ENDC}")
         return "Erreur"
-      else:
-        result = deplacement_arriere(xo, xd, joueur)
-        if result == "pasmange":
-          print(f"{bcolors.FAIL}Déplacement impossible (deplacement_arriere){bcolors.ENDC}")
-          return "Erreur"
 
     # Sauvegarde
     sauvegarde(destination, joueur) # Déplacement joueur
