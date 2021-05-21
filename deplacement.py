@@ -43,13 +43,13 @@ def quel_deplacement(source, destination, joueur, prevision):
     # Vérification si la case est existante
     result = case_existante(xd, yd)
     if result != True:
-      print ("Case incorrecte (case_possible)")
+      print (f"{bcolors.FAIL}Case incorrecte{bcolors.ENDC}")
       return "Erreur"
   
     # Vérification si la case est prise
     result = case_vide(xd, yd)
     if result != True:
-      print ("Case prise (case_vide)")
+      print (f"{bcolors.FAIL}Case prise{bcolors.ENDC}")
       return "Erreur"
 
     # Vérification que le déplacement ne se fasse pas en arrière
@@ -61,7 +61,7 @@ def quel_deplacement(source, destination, joueur, prevision):
     # Vérification si le déplacement est possible
     result = deplacement_possible(xo, xd, yo, yd)
     if result != True:
-      print("Déplacement impossible (deplacement_possible)")
+      print(f"{bcolors.FAIL}Déplacement impossible{bcolors.ENDC}")
       return "Erreur"
 
     # Vérification si on a affaire à une dame ou un pion
@@ -74,7 +74,7 @@ def quel_deplacement(source, destination, joueur, prevision):
       if result == "mange":
         print(f'{bcolors.OKGREEN}Joueur mangé{bcolors.ENDC}')
       elif result == "pasmange":
-        print("Déplacement impossible (manger)")
+        print(f"{bcolors.FAIL}Déplacement impossible{bcolors.ENDC}")
         return "Erreur"
       elif result == "doitmanger":
         print(f"{bcolors.FAIL}Vous devez manger{bcolors.ENDC}")
