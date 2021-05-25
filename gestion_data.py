@@ -1,6 +1,5 @@
 from data import *
 from config import *
-from pygame_code import*
 #
 # Fichier regroupant les fonctions de gestion de données
 #
@@ -62,12 +61,12 @@ def convert_case_y(case):
 
 # Fonction pour convertir les coordonnées lorsque l'on clique sur une case
 def convert_co_x(X):
-  return X//(int(size/10))
+  return X//(int(game_display_size/10))
 
 
 # Fonction pour convertir les coordonnées lorsque l'on clique sur une case
 def convert_co_y(Y):
-  return Y//(int(size/10))
+  return Y//(int(game_display_size/10))
 
 # Fonction pour vérifier si on respecte les indications
 def respect_indications(xo, xd, yo, yd, prevision):

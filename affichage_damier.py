@@ -1,12 +1,9 @@
 from data import *
 from config import *
 from gestion_data import *
-import pygame
-import pygame_code
 #
 # Fichier regroupant les fonctions relatives à l'affichage du damier
 #
-
 
 
 # Affichage du damier en mode console
@@ -27,7 +24,6 @@ def affichage_damier_console(damier):
     print("\n")
 
 
-
 # Affichage du damier en mode graphique
 def affichage_damier_graphique(damier):
   """
@@ -42,7 +38,20 @@ def affichage_damier_graphique(damier):
         pion(game_display_size, gris, convert_case_x(j), convert_case_y(i))
       elif damier[i][j] == 'X':
         pion(game_display_size, orange, convert_case_x(j), convert_case_y(i))
-  
+
+
+# Création de la variable du plateau
+def variable_plateau():
+  """
+  Cette fonction s'occupe de créer la variable de plateau
+  Input: void
+  Return (pygame): plateau
+  """
+  return pygame.display.set_mode((game_display_size, game_display_size))
+
+
+plateau = variable_plateau() # Variable de plateau
+
 
 # Création du damier en mode graphique
 def creation_plateau():
@@ -51,10 +60,14 @@ def creation_plateau():
   Input : Void
   Return : Variable du plateau
   """
-  return pygame.display.set_mode((game_display_size, game_display_size))
-
-
-plateau = creation_plateau() # Variable de plateau
+  for y in range(5):
+    for i in range(5):
+      pygame.draw.rect(plateau, beige, (0 + (game_display_size / 5 * i), 0 + (game_display_size / 5 * y), game_display_size / 10, game_display_size / 10))
+      pygame.draw.rect(plateau, marron, (game_display_size / 10 + (game_display_size / 5 * i), 0 + (game_display_size / 5 * y), game_display_size / 10, game_display_size / 10))
+    for i in range(5):
+      pygame.draw.rect(plateau, marron, (0 + (game_display_size / 5 * i), game_display_size / 10 + (game_display_size / 5 * y), game_display_size / 10, game_display_size / 10))
+      pygame.draw.rect(plateau, beige, (game_display_size / 10 + (game_display_size / 5 * i), game_display_size / 10 + (game_display_size / 5 * y), game_display_size / 10, game_display_size / 10))
+  return plateau
 
 
 # Affichage d'un pion
