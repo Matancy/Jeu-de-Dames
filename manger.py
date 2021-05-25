@@ -9,9 +9,8 @@ def indication_doit_manger(joueur, deplacement_simple):
   """
     Fonction qui nous indique si le joueur doit manger
 
-    input (bool): le joueur qui joue
-    input (bool): évite que la prédiction bloque le déplacement dans le cas d'un déplacment simple
-    return (list): nous indique quel pion manger
+    Input (bool): Joueur, type de déplacement
+    Return (list): Quel pions on doit manger
   """
   prevision = []
   joueur_inverse = quel_joueur(not joueur)
@@ -45,12 +44,8 @@ def manger(xo, xd, yo, yd, joueur, prevision):
   """
     Fonction qui permet de regarder si on peut manger
 
-    input xo, xd, yo, yd: coordonnées des cases de départ et de destination du pion
-    input joueur: le joueur qui joue
-    input prevision: stocke les indications pour manger
-
-    return booléen: True (on peut manger)
-    return booléen: False (on ne peut pas manger)
+    Input (int) x4, (bool), (list): Coordonnées xo, xd, yo, yd, joueur, prévision
+    Return (bool): True / False
 
   """
   # On vérifie que la personne respecte bien les indications

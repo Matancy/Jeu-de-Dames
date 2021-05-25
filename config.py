@@ -4,7 +4,7 @@ import pygame
 #
 
 
-# Mode d'affichage
+# Mode d'affichage (Alterner le commentaire pour avoir la version voulue)
 
 game_display_type = "console"
 #game_display_type = "graphical"

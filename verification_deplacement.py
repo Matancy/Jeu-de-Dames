@@ -38,3 +38,5 @@ def deplacement_arriere(xo, xd, joueur):
     return False
   elif joueur == "O" and xo - 1 == xd:
     return False
+  else:
+    return True

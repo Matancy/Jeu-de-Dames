@@ -7,10 +7,9 @@ from data import *
 # On regarde si le jeu est terminé
 def is_game_finished():
   """
-    fonction nous  informe quand la partie est finie et quel est le gagnant
-    renvoie "Rond Gagnant" si le jouer O à gagné
-    renvoie "Croix Gagnante" si le jouer X à gagné
-    renvoie "partie-en-cours" si la partie n'est pas terminé 
+    Fonction nous  informe quand la partie est finie et quel est le gagnant
+    Input : Void
+    Return (str) : texte indiquant le gagnant de la partie / partie en cours
   """
   rond = 0
   croix = 0
