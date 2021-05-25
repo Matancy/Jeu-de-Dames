@@ -25,7 +25,7 @@ def affichage_damier_console(damier):
 
 
 # Affichage du damier en mode graphique
-def affichage_damier_graphique(damier):
+def affichage_damier_graphique(damier, plateau):
   """
   Cette fonction affiche le damier en interface graphique en lui fournissant une liste
   Input (list): damier
@@ -35,9 +35,9 @@ def affichage_damier_graphique(damier):
   for i in range(10):
     for j in range(10):
       if damier[i][j] == 'O':
-        pion(game_display_size, gris, convert_case_x(j), convert_case_y(i))
+        pion(plateau, game_display_size, gris, convert_case_x(j), convert_case_y(i))
       elif damier[i][j] == 'X':
-        pion(game_display_size, orange, convert_case_x(j), convert_case_y(i))
+        pion(plateau, game_display_size, orange, convert_case_x(j), convert_case_y(i))
 
 
 # Création de la variable du plateau

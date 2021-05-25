@@ -106,10 +106,9 @@ def middle_coords(yo, yd):
 
 
 # Fonction pour récupérer les coordonnées
-def get_graphical_coords(type):
+def get_graphical_coords():
     for event in pygame.event.get():
         if event.type == pygame.MOUSEBUTTONDOWN and pygame.mouse.get_pressed() == (1, 0, 0):
             Yo, Xo = pygame.mouse.get_pos()
             xOgraphique, yOgraphique = str(convert_co_x(Xo)), str(convert_co_y(Yo))
-            print("depart :", xOgraphique, yOgraphique)
             return xOgraphique + yOgraphique

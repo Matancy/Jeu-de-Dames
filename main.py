@@ -6,7 +6,6 @@ from fin_de_partie import *
 from verification_dame import *
 from manger import *
 import pygame
-from pygame_code import *
 
 
 # Variable de déplacement évitant de bloquer le jeu par la prévision
@@ -28,9 +27,9 @@ while partie != 5:
             creation_plateau(plateau)
             pygame_init = True
         else:
-            affichage_damier_graphique(damier)
+            affichage_damier_graphique(damier, plateau)
     else:
-        affichage_damier_console(damier)
+        affichage_damier_console(damier, plateau)
 
 
     # Système de fermeture de l'interface graphique
@@ -64,7 +63,11 @@ while partie != 5:
     print(f"{bcolors.UNDERLINE}Joueur :{bcolors.ENDC} {player_name}")
     if game_display_type == "graphical":
         source = get_graphical_coords()
+        while source == None:
+            source = get_graphical_coords()
         destination = get_graphical_coords()
+        while destination == None:
+            destination = get_graphical_coords()
         print(source, destination)
     else:
         source = str(input("Emplacement source : "))
