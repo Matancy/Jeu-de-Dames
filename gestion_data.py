@@ -68,6 +68,7 @@ def convert_co_x(X):
 def convert_co_y(Y):
   return Y//(int(game_display_size/10))
 
+
 # Fonction pour vérifier si on respecte les indications
 def respect_indications(xo, xd, yo, yd, prevision):
     """
@@ -102,3 +103,13 @@ def middle_coords(yo, yd):
         return "nointention"
     else:
         return "nointention"  # Aucune volonté de manger
+
+
+# Fonction pour récupérer les coordonnées
+def get_graphical_coords(type):
+    for event in pygame.event.get():
+        if event.type == pygame.MOUSEBUTTONDOWN and pygame.mouse.get_pressed() == (1, 0, 0):
+            Yo, Xo = pygame.mouse.get_pos()
+            xOgraphique, yOgraphique = str(convert_co_x(Xo)), str(convert_co_y(Yo))
+            print("depart :", xOgraphique, yOgraphique)
+            return xOgraphique + yOgraphique

@@ -6,8 +6,8 @@ import pygame
 
 # Mode d'affichage (Alterner le commentaire pour avoir la version voulue)
 
-game_display_type = "console"
-#game_display_type = "graphical"
+#game_display_type = "console"
+game_display_type = "graphical"
 game_display_size = 600 # Ne pas désactiver
 
 # Mode de jeu

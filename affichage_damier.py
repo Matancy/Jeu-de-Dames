@@ -51,7 +51,7 @@ def variable_plateau():
 
 
 # Création du damier en mode graphique
-def creation_plateau():
+def creation_plateau(plateau):
   """
   Cette fonction permet de créer la variable de plateau
   Input : Void
@@ -68,7 +68,7 @@ def creation_plateau():
 
 
 # Affichage d'un pion
-def pion(size, couleur, x, y):
+def pion(plateau, size, couleur, x, y):
   """
   Fonction qui permet d'afficher un pion sur l'interface graphique
   Input (str) : Taille, couleur, position x et position y
