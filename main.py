@@ -62,9 +62,13 @@ while partie != 5:
     # On demande quel déplacement le joueur veut faire
     player_name = quel_joueur(joueur)
     print(f"{bcolors.UNDERLINE}Joueur :{bcolors.ENDC} {player_name}")
-    source = xOgraphique + yOgraphique
-    destination = xDgraphique + yDgraphique
-    print(source, destination)
+    if game_display_type == "graphical":
+        source = xOgraphique + yOgraphique
+        destination = xDgraphique + yDgraphique
+        print(source, destination)
+    else:
+        source = str(input("Emplacement source : "))
+        destination = str(input("Emplacement destination : "))
 
     # On effectue les vérifications et on le déplace
     result = quel_deplacement(source, destination, joueur, prevision)
