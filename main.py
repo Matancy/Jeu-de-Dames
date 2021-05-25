@@ -6,7 +6,7 @@ from fin_de_partie import *
 from verification_dame import *
 from manger import *
 import pygame
-from pygame_code import *
+
 
 # Variable de déplacement évitant de bloquer le jeu par la prévision
 deplacement_simple = False
@@ -14,7 +14,23 @@ deplacement_simple = False
 # Variable si on fais rejouer le joueur
 replay = False
 
+# Variable d'initialisation Pygame
+pygame_init = False
+
 while partie != 5:
+
+    # Initialisation des éléments graphiques
+    if game_display_type == "graphical":
+        if pygame_init == False:
+            from pygame_code import *
+            plateau = variable_plateau()
+            init_plateau()
+            creation_plateau()
+            pygame_init = True
+        else:
+            affichage_damier_graphique(damier)
+    else:
+        affichage_damier_console(damier)
 
 
     # Système de fermeture de l'interface graphique
@@ -42,13 +58,6 @@ while partie != 5:
         # On désactive le replay
         replay = False
 
-    # Affichage du plateau de jeu en fonction de la configuration
-    if game_display_type == "console":
-        affichage_damier_console(damier)
-    else:
-        pass
-        # affichage_damier_graphique(damier)
-        # Ne pas oublier de gérer cette zone pour ne pas afficher plusieurs fois le damier
 
     # On demande quel déplacement le joueur veut faire
     player_name = quel_joueur(joueur)

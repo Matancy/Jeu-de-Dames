@@ -50,9 +50,6 @@ def variable_plateau():
   return pygame.display.set_mode((game_display_size, game_display_size))
 
 
-plateau = variable_plateau() # Variable de plateau
-
-
 # Création du damier en mode graphique
 def creation_plateau():
   """
