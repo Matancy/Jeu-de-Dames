@@ -43,14 +43,23 @@ def quel_joueur(joueur):
 
 
 # Fonction pour convertir les coordonnée x en coordonnés plateau
-def convert_x(case):
+def convert_case_x(case):
     return int((game_display_size/20)+(2*case*game_display_size/20))
 
 
 # Fonction pour convertir les coordonnées y en coordonnées plateau
-def convert_y(case):
+def convert_case_y(case):
     return int((game_display_size/20)+(2*case*game_display_size/20))
 
+
+# Fonction pour convertir les coordonnées lorsque l'on clique sur une case
+def convert_co_x(X):
+  return X//(int(size/10))
+
+
+# Fonction pour convertir les coordonnées lorsque l'on clique sur une case
+def convert_co_y(Y):
+  return Y//(int(size/10))
 
 # Fonction pour vérifier si on respecte les indications
 def respect_indications(xo, xd, yo, yd, prevision):
