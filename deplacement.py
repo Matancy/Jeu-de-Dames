@@ -11,13 +11,8 @@ def quel_deplacement(source, destination, joueur, prevision):
   """
     Fonction qui va gérer les déplacements des pions
 
-    input source: coordonnées de la case de départ du pion à déplacer
-    input destination: coordonnées de la case de destination du pion à déplacer
-    input joueur: le joueur qui joue
-    input prevision: stocke les indications pour manger
-
-    return booléen: False (le déplacement est impossible)
-    return booléen: True (le déplacement est possible)
+    input (int), (int), (bool),(list): Source, Coordonnées, Joueur, Prévision
+    return (bool): True / False
   """
 
   # On récupère la variable du joueur

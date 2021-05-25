@@ -9,8 +9,7 @@ from config import *
 def sauvegarde(destination, joueur):
     """
     Fonction qui sauvegarde les déplacements des joueurs
-    Input (int): coordonnées de la case de destination du pion
-    Input (bool): le joueur qui joue
+    Input (int), (bool): Coordonnées, joueur
     Return : Void
     """
 
@@ -62,6 +61,11 @@ def convert_y(case):
 
 # Fonction pour vérifier si on respecte les indications
 def respect_indications(xo, xd, yo, yd, prevision):
+    """
+    Fonction pour vérifier que la prédiction est respectée
+    Input (int) x4, (list): Coordonnées xo, xd, yo, yd, prévision
+    Return (str): Message de confirmation / refus
+    """
     # Si la prévision est vide
     if prevision == []:
         return "ok"
@@ -76,6 +80,11 @@ def respect_indications(xo, xd, yo, yd, prevision):
 
 # Fonction pour calculer les coordonées du mileu d'un déplacement
 def middle_coords(yo, yd):
+    """
+    Fonction qui permet de calculer les coordonnées du pion entre deux
+    Input (int) x2: Coordonnées yo, yd
+    Return (int), (str): coords, message
+    """
     if yo + 2 == yd:
         return yd - 1
     elif yd + 2 == yo:
